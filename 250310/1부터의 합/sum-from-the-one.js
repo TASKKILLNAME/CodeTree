@@ -1,12 +1,11 @@
-const fs = require("fs");
-let input = fs.readFileSync(0).toString().trim();
-let n = Number(input);
+const n = Number(require("fs").readFileSync(0).toString());
 
-for (let i = 0; i < n; i++) {
-    if (i < n - i) {
-        continue;
-    } else if (i >= n - i) {
-        console.log(i);
-        break;
-    }
-}        
+let cnt = 1;
+let prod = 1;
+
+while (prod < n) {
+    cnt++;
+    prod += cnt;
+}
+
+console.log(cnt);
