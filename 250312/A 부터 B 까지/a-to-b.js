@@ -5,21 +5,27 @@ let b = Number(input[1]);
 
 let array = [];
 
+function addArray() {
+    array += a;
+    array += " ";
+}
+
+addArray();
+
+
 while (a < b) {
     if (a % 2 == 1) {
         a *= 2;
         if (a > b) {
             break;
         }
-        array += a;
-        array += " ";
+        addArray();
     } else if (a % 2 == 0) {
         a += 3;
         if (a > b) {
             break;
         }
-        array += a;
-        array += " ";
+        addArray();
     }
 }
-console.log(input[0], array);
+console.log(array);
